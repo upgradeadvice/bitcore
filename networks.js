@@ -6,32 +6,31 @@ var hex = function(hex) {
 
 exports.livenet = {
   name: 'livenet',
-  magic: hex('f9beb4d9'),
-  addressVersion: 0x00,
+  magic: hex('04050504'),
+  addressVersion: 0x0F,
   privKeyVersion: 128,
   P2SHVersion: 5,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
-    hash: hex('6FE28C0AB6F1B372C1A6A246AE63F74F931E8365E15A089C68D6190000000000'),
-    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+    hash: hex('92facc7eccb95a82d819e4d45eb2e2f7c1741b0315e0206f7a0e656b0e070000'),
+    merkle_root: hex('641362b5476e634e39989912c4452d17ddef9e19934646800e5eb68a1d3ccca2'),
     height: 0,
-    nonce: 2083236893,
-    version: 1,
+    nonce: 139785,
+    version: 112,
     prev_hash: buffertools.fill(new Buffer(32), 0),
-    timestamp: 1231006505,
-    bits: 486604799,
+    timestamp: 1404668205,
+    bits: 504365055,
   },
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
+    '104.131.125.97',
+    '103.19.252.82',
+    '178.62.247.76',
+    '104.131.66.88'
   ],
-  defaultClientPort: 8333
+  defaultClientPort: 29948
 };
+
 
 exports.mainnet = exports.livenet;
 
@@ -54,8 +53,6 @@ exports.testnet = {
     bits: 486604799,
   },
   dnsSeeds: [
-    'testnet-seed.bitcoin.petertodd.org',
-    'testnet-seed.bluematt.me'
   ],
   defaultClientPort: 18333
 };

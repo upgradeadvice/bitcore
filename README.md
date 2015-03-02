@@ -1,5 +1,7 @@
-Bitcore
+MUE Bitcore
 =======
+Please note, this fork has only been edited for insight functionality. Don't expect anything else to work.
+
 
 [![Build Status](https://travis-ci.org/bitpay/bitcore.svg?branch=master)](https://travis-ci.org/bitpay/bitcore)
 [![Coverage Status](https://img.shields.io/coveralls/bitpay/bitcore.svg)](https://coveralls.io/r/bitpay/bitcore)

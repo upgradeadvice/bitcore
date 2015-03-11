@@ -8,6 +8,8 @@ if (process.browser) {
   var hashjs = require('hash.js');
 }
 
+var quark = require('quark-hash');
+
 var sha256 = exports.sha256 = function(data) {
   return new Buffer(crypto.createHash('sha256').update(data).digest('binary'), 'binary');
 };
@@ -56,6 +58,10 @@ var twoSha256 = exports.twoSha256 = function(data) {
 
 var sha256ripe160 = exports.sha256ripe160 = function(data) {
   return ripe160(sha256(data));
+};
+
+var quarkDigest = exports.quarkDigest = function(data) {
+  return quark.digest(data);
 };
 
 /**

@@ -7,9 +7,9 @@ var hex = function(hex) {
 exports.livenet = {
   name: 'livenet',
   magic: hex('04050504'),
-  addressVersion: 0x0F,
+  addressVersion: 0x0f,
   privKeyVersion: 128,
-  P2SHVersion: 5,
+  P2SHVersion: 9,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
@@ -23,6 +23,7 @@ exports.livenet = {
     bits: 504365055,
   },
   dnsSeeds: [
+    'dnsseed.monetaryunit.tk',
     '104.131.125.97',
     '103.19.252.82',
     '178.62.247.76',

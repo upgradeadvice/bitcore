@@ -261,9 +261,9 @@ exports.bufferSMToInt = function(v) {
 
 var formatValue = exports.formatValue = function(valueBuffer) {
   var value = valueToBigInt(valueBuffer).toString();
-  var integerPart = value.length > 8 ? value.substr(0, value.length - 8) : '0';
-  var decimalPart = value.length > 8 ? value.substr(value.length - 8) : value;
-  while (decimalPart.length < 8) {
+  var integerPart = value.length > 5 ? value.substr(0, value.length - 5) : '0';
+  var decimalPart = value.length > 5 ? value.substr(value.length - 5) : value;
+  while (decimalPart.length < 5) {
     decimalPart = "0" + decimalPart;
   }
   decimalPart = decimalPart.replace(/0*$/, '');
@@ -279,14 +279,14 @@ var reWholeVal = /^\s*(\d+)$/;
 var reSciNotation = /[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?/;
 
 function padFrac(frac) {
-  frac = frac.substr(0, 8); //truncate to 8 decimal places
-  while (frac.length < 8)
+  frac = frac.substr(0, 5); //truncate to 8 decimal places
+  while (frac.length < 5)
     frac = frac + '0';
   return frac;
 }
 
 function parseFullValue(res) {
-  return bignum(res[1]).mul('100000000').add(padFrac(res[2]));
+  return bignum(res[1]).mul('100000').add(padFrac(res[2]));
 }
 
 function parseFracValue(res) {
@@ -294,7 +294,7 @@ function parseFracValue(res) {
 }
 
 function parseWholeValue(res) {
-  return bignum(res[1]).mul('100000000');
+  return bignum(res[1]).mul('100000');
 }
 
 exports.parseValue = function parseValue(valueStr) {
@@ -309,7 +309,7 @@ exports.parseValue = function parseValue(valueStr) {
   res = valueStr.match(reSciNotation);
   if (res) {
     var f = parseFloat(res[0]);
-    valueStr = f.toFixed(8).toString();
+    valueStr = f.toFixed(5).toString();
   }
 
   res = valueStr.match(reFullVal);

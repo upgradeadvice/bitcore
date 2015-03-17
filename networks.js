@@ -24,10 +24,7 @@ exports.livenet = {
   },
   dnsSeeds: [
     'dnsseed.monetaryunit.tk',
-    '104.131.125.97',
-    '103.19.252.82',
-    '178.62.247.76',
-    '104.131.66.88'
+    'dnsseed2.monetaryunit.tk'
   ],
   defaultClientPort: 29948
 };
